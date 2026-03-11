@@ -76,3 +76,21 @@ def greet():
         dict: A JSON object containing the greeting message 'Hello'.
     """
     return {"message": "Hello"}
+
+
+# PUBLIC_INTERFACE
+@app.get(
+    "/bye",
+    summary="Bye endpoint",
+    description="Returns a simple 'Bye' farewell message.",
+    tags=["greetings"],
+    responses={200: {"description": "A farewell message"}},
+)
+def bye():
+    """
+    Bye endpoint that returns 'Bye'.
+
+    Returns:
+        dict: A JSON object containing the farewell message 'Bye'.
+    """
+    return {"message": "Bye"}
